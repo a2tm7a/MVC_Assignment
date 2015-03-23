@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>COMMENTS PAGE</title>
+	<link rel="stylesheet" type="text/css" href="/css/style_home.css">
+	<script src="/jquery-1.11.2.js"></script>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+</head>
+<body>	
+	<div class="heading">
+		<form action="/display_user_notifications" method="POST">
+				<input type="text"  name="search_people" placeholder="Search By Person's Name" class="search">
+				
+				<input type="submit" value="SUBMIT" name="submitname">
+				
+				
+		</form>
+		<form  method="POST" action"/logout">
+			<input type="submit" value="LOGOUT" name="logout">
+		</form>
+
+	</div>
+	<input type="text"  name="message" placeholder="MESSAGE" class="message" align="center" id="message">
+	<button value="submit" id="buttonajax">submit</button>
+	<script type="text/javascript" src="/ajaxcall.js"></script>
+		<h1>Welcome {{username}}</h1>
+		<div id="comments">
+
+
+		</div>
+		{% for post in posts %}
+		<h3>{{ post.name }}</h3>
+		<hr>
+		{{ post.time}}
+		<p>{{ post.mesage }}</p>
+		
+		<br>
+		{% endfor %}
+</body>
+</html>
+	
